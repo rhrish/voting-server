@@ -19,6 +19,6 @@ export default function startServer(store) {
 
   io.on('connection', (socket) => {
     socket.emit('state',store.getState().toJS());
-    socker.on('action',store.dispatch.bind(store));
+    socket.on('action',store.dispatch.bind(store));
   });
 }
